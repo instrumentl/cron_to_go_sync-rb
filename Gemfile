@@ -5,15 +5,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gemspec
 
-gem "activesupport"
-gem "dry-types"
-gem "faraday", ">= 1.0", "< 3.0"
-gem "faraday-follow_redirects"
-gem "faraday-retry"
-gem "interactor"
-gem "interactor-contracts"
-gem "toml-rb"
-
 group :development, :test do
   gem "rspec", "~> 3.0"
   gem "rspec-its", "~>1.3"
