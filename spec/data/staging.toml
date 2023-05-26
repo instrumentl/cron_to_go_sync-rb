@@ -1,0 +1,42 @@
+[DEFAULTS]
+dyno_size="Standard-1X"
+ttl=86400
+
+["awards:populate_non_canonicalized_awards"]
+schedule="10 3 * * 6"
+dyno_size="Standard-1X"
+ttl=14400
+command="env STATEMENT_TIMEOUT=1000s rake awards:populate_non_canonicalized_awards"
+
+["awards:populate_problematic_awards"]
+schedule="10 7 * * 5"
+dyno_size="Standard-1X"
+command="env STATEMENT_TIMEOUT=1000s rake awards:populate_problematic_awards"
+
+["content_stat:perform"]
+schedule="0 0 * * *"
+dyno_size="Standard-1X"
+ttl=3600
+command="rake content_stat:perform"
+
+["materialized_views:refresh_all"]
+schedule="0 9 * * *"
+dyno_size="Standard-1X"
+ttl=7200
+command="env STATEMENT_TIMEOUT=1000s rake materialized_views:refresh_all"
+
+["canonical_taxpayer:maybe_run_non_canonicalized"]
+schedule="0 4 * * 0"
+command="env STATEMENT_TIMEOUT=1000s rake canonical_taxpayer:maybe_run_non_canonicalized"
+
+["irs:process_revocation_list"]
+schedule="10 13 * * *"
+command="rake irs:process_revocation_list"
+
+["irs:process_epostcards"]
+schedule="30 1 * * *"
+command="rake irs:process_epostcards"
+
+[new]
+schedule="* * * * *"
+command="echo 'coolio'"

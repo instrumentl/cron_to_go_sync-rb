@@ -1,0 +1,53 @@
+name: "CI"
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      checks: write
+    env:
+      RAILS_ENV: test
+      CRONTOGO_ORGANIZATION_ID: "fake-crontogo-organization-id"
+      CRONTOGO_API_KEY: "fake-crontogo-api-key"
+    strategy:
+      fail-fast: true
+      matrix:
+        ruby: ["3.0", "3.1", "3.2"]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf
+        with:
+          bundler-cache: true
+          ruby-version: ${{ matrix.ruby }}
+      - name: Run RSpec Tests
+        timeout-minutes: 20
+        run: bundle exec rspec -f doc
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf
+        with:
+          bundler-cache: true
+          ruby-version: "3.2"
+      - name: Bundle Audit Check
+        run: bundle exec bundle-audit update && bundle exec bundle-audit check
+      - name: Setup Python
+        uses: actions/setup-python@d27e3f3d7c64b4bbf8e4abfb9b63b83e846e0435
+        with:
+          python-version: "3.10"
+      - name: Run pre-commit
+        uses: pre-commit/action@5f528da5c95691c4cf42ff76a4d10854b62cbb82
