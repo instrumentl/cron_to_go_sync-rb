@@ -39,7 +39,7 @@ module CronToGoSync
         unless (error = valid_cron_field(fields[3], 1, 12)).nil?
           key.failure("in month: #{error}")
         end
-        unless (error = valid_cron_field(fields[4], 0, 7)).nil?
+        unless (error = valid_cron_field(fields[4], 0, 6)).nil?
           key.failure("in day of week: #{error}")
         end
       end
