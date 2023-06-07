@@ -8,7 +8,7 @@ gemspec
 group :development, :test do
   gem "rspec", "~> 3.0"
   gem "rspec-its", "~>1.3"
-  gem "standard", "~> 1.28.3"
+  gem "standard", "~> 1.29.0"
   gem "pry", "~> 0.14"
   gem "webmock", "~> 3"
   gem "vcr", "~> 6"
