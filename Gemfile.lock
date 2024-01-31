@@ -148,7 +148,7 @@ GEM
       lint_roller (~> 1.1)
       rubocop-performance (~> 1.20.1)
     thor (1.2.2)
-    toml-rb (3.0.0)
+    toml-rb (3.0.1)
       citrus (~> 3.0, > 3.0)
       racc (~> 1.7)
     tzinfo (2.0.6)
