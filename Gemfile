@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 group :development, :test do
-  gem "rspec", "~> 3.0"
+  gem "rspec", "~> 3.13"
   gem "rspec-its", "~>1.3"
   gem "standard", "~> 1.33.0"
   gem "pry", "~> 0.14"
