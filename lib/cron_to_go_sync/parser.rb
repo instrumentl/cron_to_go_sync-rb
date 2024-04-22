@@ -68,7 +68,8 @@ module CronToGoSync
             lower = lower.to_i
             upper = upper.to_i
             return "invalid range lower #{lower}" if lower < lower_limit || lower > upper_limit
-            return "invalid range upper #{upper}" if upper < upper_limit || upper > upper_limit
+            return "invalid range upper #{upper}" if upper < lower_limit || upper > upper_limit
+            return "range not in order" if upper <= lower
           elsif !range.match?(/\A[0-9]+\z/)
             return "invalid range value #{range}"
           else
