@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cron_to_go_sync (0.0.2)
+    cron_to_go_sync (0.0.3)
       activesupport
       dry-types
       dry-validation
