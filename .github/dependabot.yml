@@ -15,7 +15,7 @@ updates:
       - ":octocat: github-actions"
       - ":heavy_plus_sign: dependencies"
     reviewers:
-      - instrumentl/code-reviewers
+      - instrumentl/libero
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
@@ -26,4 +26,4 @@ updates:
       - ":gem: ruby"
       - ":heavy_plus_sign: dependencies"
     reviewers:
-      - instrumentl/code-reviewers
+      - instrumentl/libero
