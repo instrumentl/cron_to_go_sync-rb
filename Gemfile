@@ -13,4 +13,5 @@ group :development, :test do
   gem "webmock", "~> 3"
   gem "vcr", "~> 6"
   gem "bundle-audit", "~> 0.1.0"
+  gem "mutex_m", "~> 0.3.0"
 end
