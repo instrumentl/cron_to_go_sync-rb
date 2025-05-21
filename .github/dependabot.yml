@@ -14,8 +14,6 @@ updates:
       - ":robot: dependabot"
       - ":octocat: github-actions"
       - ":heavy_plus_sign: dependencies"
-    reviewers:
-      - instrumentl/libero
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
@@ -25,5 +23,3 @@ updates:
       - ":robot: dependabot"
       - ":gem: ruby"
       - ":heavy_plus_sign: dependencies"
-    reviewers:
-      - instrumentl/libero
