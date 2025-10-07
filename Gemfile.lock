@@ -107,7 +107,7 @@ GEM
     racc (1.8.1)
     rainbow (3.1.1)
     regexp_parser (2.10.0)
-    rexml (3.3.9)
+    rexml (3.4.4)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
       rspec-expectations (~> 3.13.0)
@@ -161,7 +161,7 @@ GEM
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
-    uri (1.0.3)
+    uri (1.0.4)
     vcr (6.3.1)
       base64
     webmock (3.24.0)
